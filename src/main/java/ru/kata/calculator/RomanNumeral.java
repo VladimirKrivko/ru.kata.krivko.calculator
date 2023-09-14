@@ -1,4 +1,4 @@
-package ru.kata;
+package ru.kata.calculator;
 
 import java.util.Arrays;
 import java.util.Comparator;

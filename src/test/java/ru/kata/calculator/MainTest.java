@@ -1,4 +1,4 @@
-package ru.kata;
+package ru.kata.calculator;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
