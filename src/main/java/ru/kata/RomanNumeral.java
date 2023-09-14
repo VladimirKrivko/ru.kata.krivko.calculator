@@ -5,13 +5,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public enum RomanNumeral {
+enum RomanNumeral {
     I(1), IV(4), V(5), IX(9), X(10),
     XL(40), L(50), XC(90), C(100);
 
     private final int value;
 
-    private RomanNumeral(int value) {
+    RomanNumeral(int value) {
         this.value = value;
     }
 
@@ -19,7 +19,7 @@ public enum RomanNumeral {
         return value;
     }
 
-    public static List<RomanNumeral> getReverseSortedValues() {
+    private static List<RomanNumeral> getReverseSortedValues() {
         return Arrays.stream(values())
                 .sorted(Comparator.comparing((RomanNumeral e) -> e.value).reversed())
                 .collect(Collectors.toList());
@@ -52,7 +52,7 @@ public enum RomanNumeral {
 
     public static String arabicToRoman(int number) {
         if ((number <= 0) || (number > 100)) {
-            throw new IllegalArgumentException(number + " is not in range (0,100]");
+            throw new IllegalArgumentException(number + " is not in range (0,100], for this reason cannot be converted to a Roman Numeral");
         }
 
         List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
